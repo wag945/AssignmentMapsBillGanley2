@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "933370692288",
+    "firebase_url": "https://uiandmaps-ee0c6.firebaseio.com",
+    "project_id": "uiandmaps-ee0c6",
+    "storage_bucket": "uiandmaps-ee0c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933370692288:android:daf131aa8a17c9fd",
+        "android_client_info": {
+          "package_name": "com.example.bill.assignment_maps_billganley"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933370692288-ek8baibf9tn35cfoauct7243i1t106ab.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bill.assignment_maps_billganley",
+            "certificate_hash": "af39b0d26277d31adafad43ef550957f32b5ffb0"
+          }
+        },
+        {
+          "client_id": "933370692288-n705qit8nlm6unabtb0u07iusipi0d4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4GPmshNrkfNgAqf_GS5qmmAi73vXu1ro"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933370692288-n705qit8nlm6unabtb0u07iusipi0d4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933370692288:android:1de83c514150e82b",
+        "android_client_info": {
+          "package_name": "mc.sweng888.psu.edu.uiandmaps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933370692288-r99941l0806m86o55goahi352e0luk8c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mc.sweng888.psu.edu.uiandmaps",
+            "certificate_hash": "af39b0d26277d31adafad43ef550957f32b5ffb0"
+          }
+        },
+        {
+          "client_id": "933370692288-n705qit8nlm6unabtb0u07iusipi0d4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4GPmshNrkfNgAqf_GS5qmmAi73vXu1ro"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933370692288-n705qit8nlm6unabtb0u07iusipi0d4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
