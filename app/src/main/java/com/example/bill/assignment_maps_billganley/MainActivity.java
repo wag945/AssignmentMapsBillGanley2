@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        Intent explicitIntent = new Intent(this, BroadcastReceiverMap.class);
         Double latitude = Double.valueOf(editTextLat.getText().toString());
         Double longitude = Double.valueOf(editTextLong.getText().toString());
-        String location = editTextLong.getText().toString();
+        String location = editTextLocation.getText().toString();
 
 //        explicitIntent.putExtra("LATITUDE", latitude);
 //        explicitIntent.putExtra("LONGITUDE", longitude);

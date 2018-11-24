@@ -214,10 +214,14 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                     mapLocations.add(new MapLocation(location,"", String.valueOf(latitude), String.valueOf(longitude)));
                 }
 
+                //Loop through MapLocation array retrieved from firebase
                 for (int i = 0; i < mapLocations.size(); i++) {
                     MapLocation mapLocation = mapLocations.get(i);
+
                     LatLng latLng = new LatLng( Double.parseDouble(mapLocation.getLatitude()),
                             Double.parseDouble(mapLocation.getLongitude()));
+
+                    //Draw a marker for each MapLocation from firebase
                     createCustomMapMarkers(myGoogleMap,latLng,mapLocation.getTitle(),mapLocation.getDescription());
                 }
             }
@@ -238,7 +242,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
             @Override
             public void onMapLongClick(LatLng latltn) {
-                Log.i(LOG_MAP, "setOnMapLongClickListener");
+                Log.i(LOG_MAP, "onMapLongClick");
 
                 CameraPosition cameraPosition = new CameraPosition.Builder()
                         .target(latltn)
@@ -268,7 +272,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         googleMap.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
             @Override
             public void onCameraIdle() {
-                Toast.makeText(MapActivity.this,"onCameraIdle listener",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MapActivity.this,"camera is idle",Toast.LENGTH_SHORT).show();
             }
         });
     }
