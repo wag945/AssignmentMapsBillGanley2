@@ -40,7 +40,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     // Broadcast Receiver
     private IntentFilter intentFilter = null;
-//    private BroadcastReceiverMap broadcastReceiverMap = null;
+    private BroadcastReceiverMap broadcastReceiverMap = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         // Instantiating a new IntentFilter to support BroadcastReceivers
         intentFilter = new IntentFilter("com.example.bill.assignment_maps_billganley.NEW_MAP_LOCATION_BROADCAST");
-//        broadcastReceiverMap = new BroadcastReceiverMap();
+        broadcastReceiverMap = new BroadcastReceiverMap();
 
     }
 
@@ -60,13 +60,13 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     protected void onStart() {
         super.onStart();
         // Register the Broadcast Receiver.
-//        registerReceiver(broadcastReceiverMap, intentFilter);
+        registerReceiver(broadcastReceiverMap, intentFilter);
     }
 
     @Override
     protected void onStop() {
         // Unregister the Broadcast Receiver
-//        unregisterReceiver(broadcastReceiverMap);
+        unregisterReceiver(broadcastReceiverMap);
         super.onStop();
 
 
@@ -144,6 +144,14 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         // Update the global variable (currentMapMarker)
         currentMapMarker = googleMap.addMarker(markerOptions);
+
+        // Broadcast Receiver
+        Intent explicitIntent = new Intent(this, BroadcastReceiverMap.class);
+        explicitIntent.putExtra("LATITUDE", latlng.latitude);
+        explicitIntent.putExtra("LONGITUDE", latlng.longitude);
+        explicitIntent.putExtra("LOCATION", title);
+
+        sendBroadcast(explicitIntent);
     }
 
     // Step 4 - Define a new marker based on a Map click (uses onMapClickListener)

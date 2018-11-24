@@ -38,22 +38,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         // Broadcast Receiver
-//        Intent explicitIntent = new Intent(this, BroadcastReceiverMap.class);
+        Intent explicitIntent = new Intent(this, BroadcastReceiverMap.class);
         Double latitude = Double.valueOf(editTextLat.getText().toString());
         Double longitude = Double.valueOf(editTextLong.getText().toString());
         String location = editTextLocation.getText().toString();
 
-//        explicitIntent.putExtra("LATITUDE", latitude);
-//        explicitIntent.putExtra("LONGITUDE", longitude);
-//        explicitIntent.putExtra("LOCATION", location);
-//
-//        sendBroadcast(explicitIntent);
+        MapLocation mapLocation = new MapLocation(location,"",editTextLat.getText().toString(),editTextLong.getText().toString());
+
+        explicitIntent.putExtra("LATITUDE", Double.parseDouble(mapLocation.getLatitude()));
+        explicitIntent.putExtra("LONGITUDE", Double.parseDouble(mapLocation.getLongitude()));
+        explicitIntent.putExtra("LOCATION", mapLocation.getTitle());
+
+        sendBroadcast(explicitIntent);
 
         // Navigating to MapActivity
         Intent intent = new Intent(this, MapActivity.class);
-        intent.putExtra("LATITUDE", latitude);
-        intent.putExtra("LONGITUDE", longitude);
-        intent.putExtra("LOCATION", location);
+        intent.putExtra("LATITUDE", Double.parseDouble(mapLocation.getLatitude()));
+        intent.putExtra("LONGITUDE", Double.parseDouble(mapLocation.getLongitude()));
+        intent.putExtra("LOCATION", mapLocation.getTitle());
 
         startActivity(intent);
     }
