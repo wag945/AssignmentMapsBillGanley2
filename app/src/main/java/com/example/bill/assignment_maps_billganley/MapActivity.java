@@ -145,6 +145,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         // Update the global variable (currentMapMarker)
         currentMapMarker = googleMap.addMarker(markerOptions);
 
+        triggerBroadcastMessageFromFirebase(latlng,title);
+
+    }
+
+    private void triggerBroadcastMessageFromFirebase(LatLng latlng, String title) {
         // Broadcast Receiver
         Intent explicitIntent = new Intent(this, BroadcastReceiverMap.class);
         explicitIntent.putExtra("LATITUDE", latlng.latitude);
